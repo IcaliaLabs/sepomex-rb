@@ -6,8 +6,8 @@ require 'sepomex/version'
 Gem::Specification.new do |spec|
   spec.name          = "sepomex"
   spec.version       = Sepomex::VERSION
-  spec.authors       = ["Abraham Kuri"]
-  spec.email         = ["kurenn@icalialabs.com"]
+  spec.authors       = ["Abraham Kuri", "Oscar Elizondo"]
+  spec.email         = ["kurenn@icalialabs.com", "oehinojosa@icalialabs.com"]
 
   spec.summary       = %q{A Ruby wrapper for Sepomex API}
   spec.description   = %q{A Ruby wrapper for Sepomex API}
