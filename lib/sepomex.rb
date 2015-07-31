@@ -1,5 +1,7 @@
-require "sepomex/version"
+require "httparty"
 
 module Sepomex
-  # Your code goes here...
 end
+
+require "sepomex/version"
+require "sepomex/zip_code"
