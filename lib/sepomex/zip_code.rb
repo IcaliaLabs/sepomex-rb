@@ -1,4 +1,5 @@
 require 'sepomex/errors'
+require 'sepomex/collection'
 
 module Sepomex
   class ZipCode < OpenStruct
@@ -7,10 +8,17 @@ module Sepomex
     base_uri "sepomex-api.herokuapp.com/api/v1"
 
     def self.all(options = {})
+
       response = get("/zip_codes", { query: options })
 
       if response.success?
-        response["zip_codes"].map { |attributes| new(attributes) }
+        zip_codes = Sepomex::Collection.new(response["meta"]["pagination"])
+
+        response["zip_codes"].each do |attributes|
+          zip_codes << new(attributes)
+        end
+
+        zip_codes
       else
         raise_exception(response.code, response.body)
       end
