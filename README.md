@@ -36,8 +36,7 @@ Or install it yourself as:
 ```ruby
 zip_codes = Sepomex::ZipCode.all
 
-=> [ #<Sepomex::ZipCode id=1, d_codigo="01000", d_asenta="San Ángel", d_tipo_asenta="Colonia", d_mnpio="Álvaro Obregón", d_estado="Distrito Federal", d_ciudad="Ciudad de México", d_cp="01001", c_estado="09", c_oficina="01001", c_cp="", c_tipo_asenta="09", c_mnpio="010", id_asenta_cpcons="0001", d_zona="Urbano", c_cve_ciudad="01">, 
-	 #<Sepomex::ZipCode id=2...]
+=> #<Sepomex::ZipCode id=53, d_codigo="01184", d_asenta="Nelli Campo Bello", d_tipo_asenta="Unidad habi...
 ```
 
 You can specify the page to request as an option on the method.
@@ -45,8 +44,15 @@ You can specify the page to request as an option on the method.
 ```ruby
 zip_codes = Sepomex::ZipCode.all(page: 2)
 
-=> [ #<Sepomex::ZipCode id=51, d_codigo="01000", d_asenta="San Ángel", d_tipo_asenta="Colonia", d_mnpio="Álvaro Obregón", d_estado="Distrito Federal", d_ciudad="Ciudad de México", d_cp="01001", c_estado="09", c_oficina="01001", c_cp="", c_tipo_asenta="09", c_mnpio="010", id_asenta_cpcons="0001", d_zona="Urbano", c_cve_ciudad="01">, 
-	 #<Sepomex::ZipCode id=52...]
+=> #<Sepomex::ZipCode id=53, d_codigo="01184", d_asenta="Nelli Campo Bello", d_tipo_asenta="Unidad habi...
+```
+
+You can also filter by code:
+
+```ruby
+zip_codes = Sepomex::ZipCode.all(page: 2, cp: "67173")
+
+=> #<Sepomex::Collection:0x007fcb9bab50e0 @total_pages=1, @total_objects=8, @per_page=50, @collection=[#<Sepomex::ZipCode id=89510, d_codigo="67173", d_asenta="Contry los Nogales", d_tipo_asenta="Colonia", d_mnpio="Guadalupe", d_estado="Nuevo León", d_ciudad="Guadalupe", d_cp="67171", c_estado="19", c_oficina="67171", c_cp="", c_tipo_asenta="09", c_mnpio="026", id_asenta_cpcons="1725", d_zona="Urbano", c_cve_ciudad="04">...
 ```
 
 ## Bug tracker & feature request
