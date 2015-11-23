@@ -34,7 +34,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-zip_codes = Sepomex::ZipCode.all
+zip_codes = Sepomex::ZipCode.where
 
 => #<Sepomex::ZipCode id=53, d_codigo="01184", d_asenta="Nelli Campo Bello", d_tipo_asenta="Unidad habi...
 ```
@@ -42,7 +42,7 @@ zip_codes = Sepomex::ZipCode.all
 You can specify the page to request as an option on the method.
 
 ```ruby
-zip_codes = Sepomex::ZipCode.all(page: 2)
+zip_codes = Sepomex::ZipCode.where(page: 2)
 
 => #<Sepomex::ZipCode id=53, d_codigo="01184", d_asenta="Nelli Campo Bello", d_tipo_asenta="Unidad habi...
 ```
@@ -50,9 +50,35 @@ zip_codes = Sepomex::ZipCode.all(page: 2)
 You can also filter by code:
 
 ```ruby
-zip_codes = Sepomex::ZipCode.all(page: 2, cp: "67173")
+zip_codes = Sepomex::ZipCode.where(page: 2, cp: "67173")
 
 => #<Sepomex::Collection:0x007fcb9bab50e0 @total_pages=1, @total_objects=8, @per_page=50, @collection=[#<Sepomex::ZipCode id=89510, d_codigo="67173", d_asenta="Contry los Nogales", d_tipo_asenta="Colonia", d_mnpio="Guadalupe", d_estado="Nuevo León", d_ciudad="Guadalupe", d_cp="67171", c_estado="19", c_oficina="67171", c_cp="", c_tipo_asenta="09", c_mnpio="026", id_asenta_cpcons="1725", d_zona="Urbano", c_cve_ciudad="04">...
+```
+
+Filtering by State
+
+```ruby
+nuevo_leon_zipcodes = Sepomex::ZipCode.where(state: "Nuevo León")
+
+=> #<Sepomex::ZipCode id=85801, d_codigo="64000", d_asenta="La Finca", d_tipo_asenta="Colonia", d_mnpio="Monterrey", d_estado="Nuevo León", d_ciudad="Monterrey", d_cp="64008", c_estado="19", c_oficina="64008", c_cp="", c_tipo_asenta="09", c_mnpio="039", id_asenta_cpcons="3429", d_zona="Urbano", c_cve_ciudad="07">, #<Sepomex::ZipCode id=85802, d_codigo="64000", d_asenta="Monterrey Centro", d_tipo_asenta="Colonia", d_mnpio="Monterrey", d_estado="Nuevo León", d_ciudad="Monterrey", d_cp="64008", c_estado="19", c_oficina="64008", c_cp="", c_tipo_asenta="09", c_mnpio="039", id_asenta_cpcons="0001", d_zona="Urbano", c_cve_ciudad="07">...
+```
+
+Filtering by Colony
+
+```ruby
+
+colony_zip_codes = Sepomex::ZipCode.where(colony: "Prados de la Sierra")
+
+=>#<Sepomex::ZipCode id=87890, d_codigo="66230", d_asenta="Prados de La Sierra", d_tipo_asenta="Colonia", d_mnpio="San Pedro Garza García", d_estado="Nuevo León", d_ciudad="San Pedro Garza García", d_cp="66231", c_estado="19", c_oficina="66231", c_cp="", c_tipo_asenta="09", c_mnpio="019", id_asenta_cpcons="0887", d_zona="Urbano", c_cve_ciudad="02">
+```
+
+Filtering by City
+
+``ruby
+
+city_zip_codes = Sepomex::Zipcode.where(city: "Monterrey")
+
+=> #<Sepomex::ZipCode id=85801, d_codigo="64000", d_asenta="La Finca", d_tipo_asenta="Colonia", d_mnpio="Monterrey", d_estado="Nuevo León", d_ciudad="Monterrey", d_cp="64008", c_estado="19", c_oficina="64008", c_cp="", c_tipo_asenta="09", c_mnpio="039", id_asenta_cpcons="3429", d_zona="Urbano", c_cve_ciudad="07">...
 ```
 
 ## Bug tracker & feature request

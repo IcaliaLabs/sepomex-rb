@@ -7,7 +7,7 @@ module Sepomex
 
     base_uri "sepomex-api.herokuapp.com/api/v1"
 
-    def self.all(options = {})
+    def self.where(options = {})
 
       response = get("/zip_codes", { query: options })
 
