@@ -22,6 +22,11 @@ module Sepomex
       else
         raise_exception(response.code, response.body)
       end
+
+    end
+
+    class << self
+      alias_method :all, :where
     end
 
     private
