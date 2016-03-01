@@ -7,7 +7,7 @@ module Sepomex
 
     base_uri "sepomex-api.herokuapp.com/api/v1"
 
-    def self.all(options = {})
+    def self.where(options = {})
 
       response = get("/zip_codes", { query: options })
 
@@ -22,6 +22,11 @@ module Sepomex
       else
         raise_exception(response.code, response.body)
       end
+
+    end
+
+    class << self
+      alias_method :all, :where
     end
 
     private
