@@ -1,3 +1,7 @@
+[![Code Climate](https://codeclimate.com/github/IcaliaLabs/sepomex-rb/badges/gpa.svg)](https://codeclimate.com/github/IcaliaLabs/sepomex-rb)
+[![Test Coverage](https://codeclimate.com/github/IcaliaLabs/sepomex-rb/badges/coverage.svg)](https://codeclimate.com/github/IcaliaLabs/sepomex-rb/coverage)
+[![Issue Count](https://codeclimate.com/github/IcaliaLabs/sepomex-rb/badges/issue_count.svg)](https://codeclimate.com/github/IcaliaLabs/sepomex-rb)
+
 # Sepomex-rb
 
 A super simple Ruby wrapper to consume the Sepomex API at [http://sepomex-api.herokuapp.com/api/v1/zip_codes](http://sepomex-api.herokuapp.com/api/v1/zip_codes)
