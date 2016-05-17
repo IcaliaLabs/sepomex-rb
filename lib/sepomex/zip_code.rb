@@ -5,7 +5,7 @@ module Sepomex
   class ZipCode < OpenStruct
     include HTTParty
 
-    base_uri "sepomex-api.herokuapp.com/api/v1"
+    base_uri "sepomex.icalialabs.com/api/v1"
 
     def self.where(options = {})
 
