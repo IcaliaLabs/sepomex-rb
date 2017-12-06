@@ -13,5 +13,8 @@ module Sepomex
       @collection.send(name, *args, &block)
     end
 
+    def respond_to_missing?
+      super
+    end
   end
 end
